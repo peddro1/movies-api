@@ -1,5 +1,7 @@
 package com.apispring.moviesapi.services;
 
+import java.util.List;
+
 import com.apispring.moviesapi.entities.Movie;
 import com.apispring.moviesapi.repositories.MovieRepository;
 
@@ -27,6 +29,11 @@ public class MovieService {
     @Transactional
     public Movie update(Movie movie){
         return this.movieRepository.save(movie);
+    }
+
+    @Transactional
+    public  List<Movie> findByIdAPI(Long id) throws Exception{
+        return this.movieRepository.findByIdAPI(id);
     }
     
 }

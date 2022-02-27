@@ -1,5 +1,6 @@
 package com.apispring.moviesapi.entities;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,9 +29,10 @@ public class Movie {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "description")
+    @Column(name = "description" , columnDefinition = "TEXT")
     private String description;
 
     @Column(name = "id_api", unique = true)
     private Long idAPI; 
+
 }

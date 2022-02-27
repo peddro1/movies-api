@@ -41,4 +41,9 @@ public class MovieController {
         return Mono.just(this.movieService.save(movie));
     }
 
+    @CrossOrigin
+    @GetMapping("/findByIdApi")
+    public Mono<?> findByIdApi(@RequestParam("id") Long id) throws Exception{
+        return Mono.just(this.movieService.findByIdAPI(id));
+    }
 }
