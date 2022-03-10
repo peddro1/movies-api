@@ -1,19 +1,18 @@
 server:
-  port: ${STUART_ADM_PORT:8080}
+  port: 8080
 
-#spring.jpa.defer-datasource-initialization: true
 spring:
   application:
-    name: ${STUART_ADM_NAME:movies-api}
+    name: movies-api
   jpa:
     hibernate:
-      ddl-auto: ${STUART_ADM_DDL_AUTO:update}
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
       show-sql: ${STUART_ADM_DB_SHOW_SQL:false}
   datasource:
-    url: jdbc:postgresql://${STUART_ADM_DB_HOST:localhost}:${STUART_ADM_DB_PORT:5432}/${STUART_ADM_DB_NAME:movies-api}?serverTimezone=UTC&useSSL=false
-    username: ${STUART_ADM_DB_USERNAME:postgres}
-    password: ${STUART_ADM_DB_PASSWORD:postgres}
+    url: jdbc:postgresql://localhost:5432/movies-api?serverTimezone=UTC&useSSL=false
+    username: postgres
+    password: postgres
 
